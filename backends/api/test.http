@@ -1,0 +1,10 @@
+### Create tenant
+POST http://localhost:3000/tenants
+Content-Type: application/json
+
+{ "name": "Test Company" }
+
+###
+
+### Get all tenants
+GET http://localhost:3000/tenants
