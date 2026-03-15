@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import * as Joi from 'joi';
 import databaseConfig from './config/database.config';
 import appConfig from './config/app.config';
+import { TenantsModule } from './modules/tenants/tenants.module';
 
 @Module({
   imports: [
@@ -31,8 +32,10 @@ import appConfig from './config/app.config';
         password: config.get('database.password'),
         synchronize: false,
         logging: true,
+        entities: [__dirname + '/**/*Entity.ts', __dirname + '/**/*Entity.js'],
       }),
     }),
+    TenantsModule,
   ],
 })
 export class AppModule {}
