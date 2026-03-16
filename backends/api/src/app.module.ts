@@ -5,6 +5,8 @@ import * as Joi from 'joi';
 import databaseConfig from './config/database.config';
 import appConfig from './config/app.config';
 import { TenantsModule } from './modules/tenants/tenants.module';
+import { HealthModule } from './modules/health/health.module';
+import { MetricsModule } from './modules/metrics/metrics.module';
 
 @Module({
   imports: [
@@ -36,6 +38,8 @@ import { TenantsModule } from './modules/tenants/tenants.module';
       }),
     }),
     TenantsModule,
+    HealthModule,
+    MetricsModule,
   ],
 })
 export class AppModule {}
