@@ -8,3 +8,9 @@ Content-Type: application/json
 
 ### Get all tenants
 GET http://localhost:3000/tenants
+
+### health check
+GET http://localhost:3000/health
+
+### Get metrics
+GET http://localhost:3000/metrics
