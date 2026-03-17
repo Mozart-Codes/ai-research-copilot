@@ -14,3 +14,17 @@ GET http://localhost:3000/health
 
 ### Get metrics
 GET http://localhost:3000/metrics
+
+### Create Document
+POST http://localhost:3000/documents
+Content-Type: application/json
+
+{
+    "title": "test Doc",
+    "tenantId": "49f8fb0b-4e41-4293-8f4e-dfbe70bade41",
+    "sourceType": "upload"
+}
+
+
+### Get documents from tenantId
+GET http://localhost:3000/documents/49f8fb0b-4e41-4293-8f4e-dfbe70bade41
