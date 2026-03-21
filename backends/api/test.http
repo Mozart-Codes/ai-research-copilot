@@ -39,3 +39,13 @@ Content-Type: application/json
   "tenantId": "49f8fb0b-4e41-4293-8f4e-dfbe70bade41",
   "content": "NestJS is a framework for building efficient, scalable Node.js server-side applications. It uses TypeScript by default and combines elements of OOP, FP, and FRP. NestJS is built around the concept of modules, controllers, and providers. Modules are the basic building blocks of a NestJS application. Controllers handle incoming requests and return responses to the client. Providers are the main source of business logic in NestJS. Services are a type of provider that can be injected into controllers and other services."
 }
+
+### Semantic search
+POST http://localhost:3000/rag/search
+Content-Type: application/json
+
+{
+  "query": "what are the building blocks of NestJS?",
+  "tenantId": "49f8fb0b-4e41-4293-8f4e-dfbe70bade41",
+  "limit": 5
+}

@@ -9,6 +9,7 @@ import { HealthModule } from './modules/health/health.module';
 import { MetricsModule } from './modules/metrics/metrics.module';
 import { DocumentsModule } from './modules/documents/documents.module';
 import { IngestionModule } from './modules/ingestion/ingestion.module';
+import { RagModule } from './modules/rag/rag.module';
 
 @Module({
   imports: [
@@ -44,6 +45,7 @@ import { IngestionModule } from './modules/ingestion/ingestion.module';
     MetricsModule,
     DocumentsModule,
     IngestionModule,
+    RagModule,
   ],
 })
 export class AppModule {}
