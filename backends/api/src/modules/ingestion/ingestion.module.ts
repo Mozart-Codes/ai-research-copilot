@@ -19,6 +19,6 @@ import { IngestionController } from './application/controllers/IngestionControll
     EmbeddingService,
     IngestionService,
   ],
-  exports: [IngestionService],
+  exports: [IngestionService, EmbeddingService],
 })
 export class IngestionModule {}
