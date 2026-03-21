@@ -49,3 +49,12 @@ Content-Type: application/json
   "tenantId": "49f8fb0b-4e41-4293-8f4e-dfbe70bade41",
   "limit": 5
 }
+
+### RAG Q&A
+POST http://localhost:3000/rag/ask
+Content-Type: application/json
+
+{
+  "question": "What are the building blocks of NestJS?",
+  "tenantId": "49f8fb0b-4e41-4293-8f4e-dfbe70bade41"
+}
