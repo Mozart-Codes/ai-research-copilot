@@ -23,7 +23,9 @@
     "migration:revert": "npm run build && npm run typeorm-cli -- migration:revert -d dist/modules/database/infra/DatabaseConfig.js"
   },
   "dependencies": {
+    "@keyv/redis": "^5.1.6",
     "@langchain/textsplitters": "^1.0.1",
+    "@nestjs/cache-manager": "^3.1.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.0.1",
@@ -32,6 +34,7 @@
     "@nestjs/typeorm": "^11.0.0",
     "@types/multer": "^2.1.0",
     "@types/pdf-parse": "^1.1.5",
+    "cache-manager": "^7.2.8",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
     "joi": "^18.0.2",

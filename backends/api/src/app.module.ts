@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CacheModule } from '@nestjs/cache-manager';
+import KeyvRedis from '@keyv/redis';
 import * as Joi from 'joi';
 import databaseConfig from './config/database.config';
 import appConfig from './config/app.config';
@@ -24,6 +26,21 @@ import { RagModule } from './modules/rag/rag.module';
         DATABASE_USER: Joi.string().required(),
         DATABASE_PASSWORD: Joi.string().required(),
         OPENAI_API_KEY: Joi.string().required(),
+        REDIS_HOST: Joi.string().required(),
+        REDIS_PORT: Joi.number().default(6379),
+      }),
+    }),
+    CacheModule.registerAsync({
+      isGlobal: true,
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        stores: [
+          new KeyvRedis(
+            `redis://${configService.get<string>('app.redisHost')}:${configService.get<number>('app.redisPort')}`,
+          ),
+        ],
+        ttl: 0,
       }),
     }),
     TypeOrmModule.forRootAsync({
