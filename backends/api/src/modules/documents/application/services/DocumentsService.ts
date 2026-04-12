@@ -18,4 +18,7 @@ export class DocumentsService {
   async findBYTenantId(tenantId: string): Promise<DocumentEntity[]> {
     return this.documentRepository.findByTenantId(tenantId);
   }
+  async updateStatus(id: string, status: DocumentStatusEnum): Promise<void> {
+    return this.documentRepository.updateStatus(id, status);
+  }
 }
