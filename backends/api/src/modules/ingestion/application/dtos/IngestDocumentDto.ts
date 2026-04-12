@@ -2,12 +2,12 @@ import { IsString, MinLength } from 'class-validator';
 
 export class IngestDocumentDto {
   @IsString()
-  documentId: string;
+  documentId!: string;
 
   @IsString()
-  tenantId: string;
+  tenantId!: string;
 
   @IsString()
   @MinLength(10)
-  content: string;
+  content!: string;
 }
