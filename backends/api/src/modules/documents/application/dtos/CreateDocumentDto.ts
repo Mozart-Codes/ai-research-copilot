@@ -3,10 +3,10 @@ import { IsOptional, IsString, MinLength } from 'class-validator';
 export class CreateDocumentDto {
   @IsString()
   @MinLength(2)
-  title: string;
+  title!: string;
 
   @IsString()
-  tenantId: string;
+  tenantId!: string;
 
   @IsString()
   @IsOptional()
