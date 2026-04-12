@@ -8,9 +8,13 @@ import { ChunkingService } from './application/services/ChunkingService';
 import { EmbeddingService } from './application/services/EmbeddingService';
 import { IngestionService } from './application/services/IngestionService';
 import { IngestionController } from './application/controllers/IngestionController';
+import { DocumentsModule } from '../documents/documents.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([DocumentChunkEntity, EmbeddingEntity])],
+  imports: [
+    TypeOrmModule.forFeature([DocumentChunkEntity, EmbeddingEntity]),
+    DocumentsModule,
+  ],
   controllers: [IngestionController],
   providers: [
     DocumentChunkRepository,
